@@ -1,0 +1,9 @@
+rules:
+    - AssoConnect\PHPStanRules\Rules\EnforceHttpsLinksInPhpDocRule
+    - AssoConnect\PHPStanRules\Rules\EnforceHttpsLinksInStringScalarRule
+
+includes:
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor/phpstan/phpstan-phpunit/rules.neon
+    - vendor/phpstan/phpstan-strict-rules/rules.neon
+    - vendor/roave/no-floaters/rules.neon

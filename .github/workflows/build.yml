@@ -45,8 +45,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectName=[your-repo]
-            -Dsonar.projectKey=assoconnect_[your-repo]
+            -Dsonar.projectName=phpstan-rules
+            -Dsonar.projectKey=assoconnect_phpstan-rules
             -Dsonar.organization=assoconnect
             -Dsonar.sources=src
             -Dsonar.tests=tests

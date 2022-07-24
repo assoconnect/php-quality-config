@@ -1,24 +1,24 @@
 {
-    "name": "assoconnect/your-repo",
+    "name": "assoconnect/phpstan-rules",
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/assoconnect/your-repo/"
+            "url": "https://github.com/assoconnect/phpstan-rules/"
         }
     ],
     "type": "library",
     "description": "",
     "keywords": ["php"],
-    "homepage": "https://github.com/assoconnect/your-repo/",
+    "homepage": "https://github.com/assoconnect/phpstan-rules/",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "AssoConnect\\YourRepo\\": "src/"
+            "AssoConnect\\PHPStanRules\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "AssoConnect\\YourRepo\\Tests\\": "tests/"
+            "AssoConnect\\PHPStanRules\\Tests\\": "tests/"
         }
     },
     "require-dev": {
