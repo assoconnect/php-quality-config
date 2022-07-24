@@ -3,7 +3,8 @@ rules:
     - AssoConnect\PHPStanRules\Rules\EnforceHttpsLinksInStringScalarRule
 
 includes:
-    - vendor/phpstan/phpstan-phpunit/extension.neon
-    - vendor/phpstan/phpstan-phpunit/rules.neon
-    - vendor/phpstan/phpstan-strict-rules/rules.neon
-    - vendor/roave/no-floaters/rules.neon
+    - %currentWorkingDirectory%/vendor/phpstan/phpstan-phpunit/extension.neon
+    - %currentWorkingDirectory%/vendor/phpstan/phpstan-phpunit/rules.neon
+    - %currentWorkingDirectory%/vendor/phpstan/phpstan-strict-rules/rules.neon
+    - %currentWorkingDirectory%/vendor/phpstan/phpstan-webmozart-assert/extension.neon
+    - %currentWorkingDirectory%/vendor/roave/no-floaters/rules.neon
