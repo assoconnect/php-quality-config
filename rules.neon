@@ -3,6 +3,7 @@ rules:
     - AssoConnect\PHPStanRules\Rules\EnforceHttpsLinksInStringScalarRule
 
 includes:
+    - %currentWorkingDirectory%/vendor/ekino/phpstan-banned-code/extension.neon
     - %currentWorkingDirectory%/vendor/phpstan/phpstan-phpunit/extension.neon
     - %currentWorkingDirectory%/vendor/phpstan/phpstan-phpunit/rules.neon
     - %currentWorkingDirectory%/vendor/phpstan/phpstan-strict-rules/rules.neon
