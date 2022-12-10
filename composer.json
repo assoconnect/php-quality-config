@@ -26,12 +26,18 @@
         "phpstan/phpstan": "^1.2",
         "phpstan/phpstan-phpunit": "^1.0",
         "phpstan/phpstan-strict-rules": "^1.1",
+        "phpunit/phpunit": "^9.2",
         "roave/no-floaters": "^1.5",
         "phpstan/phpstan-webmozart-assert": "^1.2",
-        "ekino/phpstan-banned-code": "^1.0"
+        "ekino/phpstan-banned-code": "^1.0",
+        "slevomat/coding-standard": "^8.6",
+        "squizlabs/php_codesniffer": "^3"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.2",
-        "squizlabs/php_codesniffer": "^3"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }

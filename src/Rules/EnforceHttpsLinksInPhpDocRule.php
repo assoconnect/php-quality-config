@@ -6,7 +6,6 @@ namespace AssoConnect\PHPStanRules\Rules;
 
 use PhpParser\Node;
 use PHPStan\Analyser\Scope;
-use PHPStan\Rules\Rule;
 
 /** @extends EnforceHttpsLinksRule<Node>  */
 class EnforceHttpsLinksInPhpDocRule extends EnforceHttpsLinksRule

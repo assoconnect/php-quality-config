@@ -7,7 +7,6 @@ namespace AssoConnect\PHPStanRules\Rules;
 use PhpParser\Node;
 use PhpParser\Node\Scalar\String_;
 use PHPStan\Analyser\Scope;
-use PHPStan\Rules\Rule;
 
 /** @extends EnforceHttpsLinksRule<String_>  */
 class EnforceHttpsLinksInStringScalarRule extends EnforceHttpsLinksRule
