@@ -1,15 +1,15 @@
 {
-    "name": "assoconnect/phpstan-rules",
+    "name": "assoconnect/php-quality-config",
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/assoconnect/phpstan-rules/"
+            "url": "https://github.com/assoconnect/php-quality-config/"
         }
     ],
     "type": "library",
     "description": "",
-    "keywords": ["php"],
-    "homepage": "https://github.com/assoconnect/phpstan-rules/",
+    "keywords": ["php", "phpstan", "phpunit", "phpcs"],
+    "homepage": "https://github.com/assoconnect/php-quality-config/",
     "license": "MIT",
     "autoload": {
         "psr-4": {
