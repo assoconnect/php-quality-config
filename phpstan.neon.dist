@@ -6,5 +6,5 @@ parameters:
         - tests/Rules/*.file.php
 
 includes:
-    - extension.neon
-    - rules.neon
+    - phpstan.extension.neon
+    - phpstan.rules.neon
