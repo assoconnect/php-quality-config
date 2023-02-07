@@ -32,7 +32,8 @@
         "ekino/phpstan-banned-code": "^1.0",
         "slevomat/coding-standard": "^8.6",
         "squizlabs/php_codesniffer": "^3",
-        "phpcsstandards/phpcsextra": "^1.0"
+        "phpcsstandards/phpcsextra": "^1.0",
+        "tomasvotruba/cognitive-complexity": "0.0.5.72"
     },
     "config": {
         "allow-plugins": {
