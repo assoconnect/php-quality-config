@@ -23,6 +23,9 @@
     <rule ref="Universal.UseStatements.NoLeadingBackslash"/>
     <rule ref="Universal.WhiteSpace.DisallowInlineTabs"/>
 
+    <!-- Requires single quotes for strings -->
+    <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
+
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
         <properties>
             <property name="searchAnnotations" value="true"/>
