@@ -4,6 +4,25 @@
          xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
 
     <rule ref="PSR12"/>
+
+    <!-- https://github.com/PHPCSStandards/PHPCSExtra -->
+    <rule ref="Modernize"/>
+    <rule ref="NormalizedArrays"/>
+    <rule ref="Universal.Arrays.DuplicateArrayKey"/>
+    <rule ref="Universal.Arrays.MixedArrayKeyTypes"/>
+    <rule ref="Universal.Arrays.MixedKeyedUnkeyedArray"/>
+    <rule ref="Universal.Classes.ModifierKeywordOrder"/>
+    <rule ref="Universal.CodeAnalysis.ConstructorDestructorReturn"/>
+    <rule ref="Universal.CodeAnalysis.ForeachUniqueAssignment"/>
+    <rule ref="Universal.Constants.LowercaseClassResolutionKeyword"/>
+    <rule ref="Universal.Constants.ModifierKeywordOrder"/>
+    <rule ref="Universal.Constants.UppercaseMagicConstants"/>
+    <rule ref="Universal.Operators.StrictComparisons"/>
+    <rule ref="Universal.Operators.TypeSeparatorSpacing"/>
+    <rule ref="Universal.UseStatements.LowercaseFunctionConst"/>
+    <rule ref="Universal.UseStatements.NoLeadingBackslash"/>
+    <rule ref="Universal.WhiteSpace.DisallowInlineTabs"/>
+
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
         <properties>
             <property name="searchAnnotations" value="true"/>
