@@ -1,4 +1,11 @@
+includes:
+    - %currentWorkingDirectory%/vendor/ekino/phpstan-banned-code/extension.neon
+    - %currentWorkingDirectory%/vendor/phpstan/phpstan-phpunit/extension.neon
+    - %currentWorkingDirectory%/vendor/phpstan/phpstan-webmozart-assert/extension.neon
+
 parameters:
     level: 8
-    # Enforce typed properties being assigned in the constructor
+    # Stricter setup
+    checkTooWideReturnTypesInProtectedAndPublicMethods: true
     checkUninitializedProperties: true
+    checkMissingCallableSignature: true
