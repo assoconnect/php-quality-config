@@ -1,4 +1,13 @@
+includes:
+    - %currentWorkingDirectory%/vendor/ekino/phpstan-banned-code/extension.neon
+    - %currentWorkingDirectory%/vendor/phpstan/phpstan-phpunit/extension.neon
+    - %currentWorkingDirectory%/vendor/phpstan/phpstan-webmozart-assert/extension.neon
+    - %currentWorkingDirectory%/vendor/tomasvotruba/cognitive-complexity/config/extension.neon
+
 parameters:
     level: 8
     # Enforce typed properties being assigned in the constructor
     checkUninitializedProperties: true
+    cognitive_complexity:
+        class: 50
+        function: 12 # default is 8
