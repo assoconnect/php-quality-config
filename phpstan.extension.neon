@@ -2,10 +2,24 @@ includes:
     - %currentWorkingDirectory%/vendor/ekino/phpstan-banned-code/extension.neon
     - %currentWorkingDirectory%/vendor/phpstan/phpstan-phpunit/extension.neon
     - %currentWorkingDirectory%/vendor/phpstan/phpstan-webmozart-assert/extension.neon
+    # Some rule sets must be included here as they also define default parameters
+    - %currentWorkingDirectory%/vendor/shipmonk/phpstan-rules/rules.neon
 
 parameters:
     level: 8
     # Stricter setup
+    checkMissingCallableSignature: true
     checkTooWideReturnTypesInProtectedAndPublicMethods: true
     checkUninitializedProperties: true
-    checkMissingCallableSignature: true
+    shipmonkRules:
+        forbidFetchOnMixed:
+            enabled: false # Too many false positive
+        forbidMethodCallOnMixed:
+            enabled: false # Too many false positive
+        forbidNullInBinaryOperations:
+            enabled: false # Too many false positive
+            blacklist: [
+                '**', '!=', '==', '+', 'and', 'or', '&&', '||', '%', '-', '/', '*', # checked by phpstan-strict-rules
+                '>', '>=', '<', '<=', '<=>', # checked by AllowComparingOnlyComparableTypesRule
+                '===', '!==', '??' # valid with null involved
+            ]
