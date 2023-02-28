@@ -12,6 +12,20 @@ includes:
 rules:
     - AssoConnect\PHPStanRules\Rules\EnforceHttpsLinksInPhpDocRule
     - AssoConnect\PHPStanRules\Rules\EnforceHttpsLinksInStringScalarRule
+    #- AssoConnect\PHPStanRules\Rules\ForbidIdenticalClassComparisonRule (defined as a service)
+
+parametersSchema:
+    forbidIdenticalClassComparison: structure([
+        allowList: arrayOf(string())
+    ])
+
+services:
+    -
+        class: AssoConnect\PHPStanRules\Rules\ForbidIdenticalClassComparisonRule
+        tags:
+            - phpstan.rules.rule
+        arguments:
+            allowList: %forbidIdenticalClassComparison.allowList%
 
 parameters:
     level: 8
@@ -19,9 +33,13 @@ parameters:
     checkMissingCallableSignature: true
     checkTooWideReturnTypesInProtectedAndPublicMethods: true
     checkUninitializedProperties: true
+    forbidIdenticalClassComparison:
+        allowList: []
     shipmonkRules:
         forbidFetchOnMixed:
             enabled: false # Too many false positive
+        forbidIdenticalClassComparison:
+            enabled: true # Replaced by our own rule with an allow list
         forbidMethodCallOnMixed:
             enabled: false # Too many false positive
         forbidNullInBinaryOperations:
