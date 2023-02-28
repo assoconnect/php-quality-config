@@ -1,9 +1,0 @@
-rules:
-    - AssoConnect\PHPStanRules\Rules\EnforceHttpsLinksInPhpDocRule
-    - AssoConnect\PHPStanRules\Rules\EnforceHttpsLinksInStringScalarRule
-
-includes:
-    - %currentWorkingDirectory%/vendor/phpstan/phpstan-phpunit/rules.neon
-    - %currentWorkingDirectory%/vendor/phpstan/phpstan-strict-rules/rules.neon
-    - %currentWorkingDirectory%/vendor/roave/no-floaters/rules.neon
-    - %currentWorkingDirectory%/vendor/thecodingmachine/phpstan-strict-rules/phpstan-strict-rules.neon

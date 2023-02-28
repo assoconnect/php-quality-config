@@ -4,6 +4,14 @@ includes:
     - %currentWorkingDirectory%/vendor/phpstan/phpstan-webmozart-assert/extension.neon
     # Some rule sets must be included here as they also define default parameters
     - %currentWorkingDirectory%/vendor/shipmonk/phpstan-rules/rules.neon
+    - %currentWorkingDirectory%/vendor/phpstan/phpstan-phpunit/rules.neon
+    - %currentWorkingDirectory%/vendor/phpstan/phpstan-strict-rules/rules.neon
+    - %currentWorkingDirectory%/vendor/roave/no-floaters/rules.neon
+    - %currentWorkingDirectory%/vendor/thecodingmachine/phpstan-strict-rules/phpstan-strict-rules.neon
+
+rules:
+    - AssoConnect\PHPStanRules\Rules\EnforceHttpsLinksInPhpDocRule
+    - AssoConnect\PHPStanRules\Rules\EnforceHttpsLinksInStringScalarRule
 
 parameters:
     level: 8
