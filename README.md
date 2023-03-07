@@ -13,12 +13,15 @@ composer require --dev assoconnect/php-quality-config
 
 ### Including in this package
 * `EnforceHttpsLinksRule` to ban insecure links containing `http:` in string scalars and PHPDoc blocks
+* `ForbidIdenticalClassComparisonRule` to ban strict comparison of objects
 
 ### From other packages
 * `phpstan/phpstan-phpunit`
 * `phpstan/phpstan-strict-rules`
 * `phpstan/phpstan-webmozart-assert`
 * `roave/no-floaters`
+* `shipmonk/phpstan-rules`
+* `thecodingmachine/phpstan-strict-rules`
 
 ## PHPCS / Code Style
 

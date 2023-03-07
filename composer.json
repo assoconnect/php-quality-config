@@ -40,5 +40,12 @@
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
         }
+    },
+    "extra": {
+        "phpstan": {
+            "includes": [
+                "phpstan.extension.neon"
+            ]
+        }
     }
 }
