@@ -24,7 +24,7 @@ class EnforceHttpsLinksInPhpDocRuleTest extends RuleTestCase
             3,
             [
                 EnforceHttpsLinksRule::MESSAGE,
-                14,
+                16,
             ],
         ));
     }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 $secureLink = 'https://www.google.com';
 $insecureLink = 'http://www.google.com';
 

@@ -22,7 +22,7 @@ class EnforceHttpsLinksInStringScalarRuleTest extends RuleTestCase
         $this->analyse([__DIR__ . '/EnforceHttpsLinksRule.file.php'], [
             [
                 EnforceHttpsLinksRule::MESSAGE,
-                4,
+                6,
             ],
         ]);
     }
