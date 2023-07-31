@@ -36,7 +36,9 @@
         "roave/no-floaters": "^1.13",
         "shipmonk/phpstan-rules": "^4.2",
         "slevomat/coding-standard": "^8.6",
-        "squizlabs/php_codesniffer": "^3"
+        "squizlabs/php_codesniffer": "^3",
+        "thecodingmachine/phpstan-safe-rule": "^1.2",
+        "thecodingmachine/safe": "^3.0"
     },
     "config": {
         "allow-plugins": {
