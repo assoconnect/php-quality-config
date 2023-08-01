@@ -132,13 +132,22 @@ class ForbidIdenticalClassComparisonRule implements Rule
             }
         }
 
-
         if ($type instanceof ArrayType) {
             // Empty array
             if ($type->isIterableAtLeastOnce()->no()) {
                 return true;
             }
             return $this->isAccepted($type->getIterableValueType());
+        }
+
+        if ($type instanceof UnionType) {
+            foreach ($type->getTypes() as $innerType) {
+                if (!$this->isAccepted($innerType)) {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         return false;

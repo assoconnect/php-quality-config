@@ -31,16 +31,8 @@ class ForbidIdenticalClassComparisonRuleTest extends RuleTestCase
                 6,
             ],
             [
-                'Using === with string|false and string|false is denied',
-                12,
-            ],
-            [
                 'Using === with DateTime|string and DateTime|string is denied',
                 18,
-            ],
-            [
-                'Using === with int|string and int|string is denied',
-                24,
             ],
         ]);
     }
