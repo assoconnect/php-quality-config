@@ -26,6 +26,8 @@
     <!-- Requires single quotes for strings -->
     <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
 
+    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
+
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
         <properties>
             <property name="searchAnnotations" value="true"/>
