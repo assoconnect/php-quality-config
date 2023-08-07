@@ -49,3 +49,9 @@ parameters:
                 '>', '>=', '<', '<=', '<=>', # checked by AllowComparingOnlyComparableTypesRule
                 '===', '!==', '??' # valid with null involved
             ]
+    ignoreErrors:
+        -
+            # Prevents using @return mixed[] for all test providers
+            message: '#Method [a-zA-Z0-9\\_]+::provide[a-zA-Z]+\(\) return type has no value type specified in iterable type iterable.#'
+            path: %currentWorkingDirectory%/tests/
+            reportUnmatched: false
