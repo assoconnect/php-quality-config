@@ -36,6 +36,8 @@ parameters:
     forbidIdenticalClassComparison:
         allowList: []
     shipmonkRules:
+        allowNamedArgumentOnlyInAttributes:
+            enabled: false
         forbidFetchOnMixed:
             enabled: false # Too many false positive
         forbidIdenticalClassComparison:
