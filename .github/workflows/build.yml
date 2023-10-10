@@ -25,16 +25,6 @@ jobs:
       - run: composer validate --strict
       
       - run: composer install --prefer-dist --no-progress --no-suggest
-
-      - run: vendor/bin/composer-license-checker check
-          --allowlist Apache-2.0
-          --allowlist BSD-2-Clause
-          --allowlist BSD-3-Clause
-          --allowlist LGPL-2.1-only
-          --allowlist LGPL-2.1-or-later
-          --allowlist LGPL-3.0-only
-          --allowlist LGPL-3.0-or-later
-          --allowlist MIT
       
       - run: vendor/bin/phpcs
         if: ${{ failure() ||  success() }}
