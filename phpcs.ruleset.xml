@@ -25,6 +25,9 @@
 
     <!-- Requires single quotes for strings -->
     <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
+	
+	<!-- https://stackoverflow.com/a/64481894/1415545 -->
+	<rule ref="SlevomatCodingStandard.Functions.StaticClosure"/>
 
     <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses"/>
 
