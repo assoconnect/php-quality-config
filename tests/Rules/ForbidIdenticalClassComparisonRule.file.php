@@ -1,5 +1,5 @@
 <?php
-
+// phpcs:ignoreFile
 declare(strict_types=1);
 
 (new \DateTime()) === (new \DateTime());
@@ -43,3 +43,14 @@ $arrayOfStrings1 = ['a'];
 /** @var array<int, string> $arrayOfStrings2 */
 $arrayOfStrings2 = ['b'];
 $arrayOfStrings1 === $arrayOfStrings2;
+
+enum FooBar: string
+{
+    case FOO = 'FOO';
+    case BAR = 'BAR';
+}
+function enum(): FooBar
+{
+    return FooBar::BAR;
+}
+FooBar::FOO === enum();
