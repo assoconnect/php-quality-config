@@ -18,6 +18,7 @@ use PHPStan\Type\ArrayType;
 use PHPStan\Type\BooleanType;
 use PHPStan\Type\CallableType;
 use PHPStan\Type\Constant\ConstantBooleanType;
+use PHPStan\Type\Enum\EnumCaseObjectType;
 use PHPStan\Type\FloatType;
 use PHPStan\Type\IntegerType;
 use PHPStan\Type\MixedType;
@@ -97,12 +98,9 @@ class ForbidIdenticalClassComparisonRule implements Rule
         }
 
         $rightType = $scope->getType($node->right);
-        if ($this->isAccepted($rightType)) {
-            return [];
-        }
-
         $leftType = $scope->getType($node->left);
-        if ($this->isAccepted($leftType)) {
+
+        if ($this->isAccepted($rightType, $leftType) || $this->isAccepted($leftType, $rightType)) {
             return [];
         }
 
@@ -116,10 +114,10 @@ class ForbidIdenticalClassComparisonRule implements Rule
         ];
     }
 
-    private function isAccepted(Type $type): bool
+    private function isAccepted(Type $firstArm, Type $otherArm): bool
     {
         foreach ($this->allowedExactTypes as $allowedExactType) {
-            if ($allowedExactType->equals($type)) {
+            if ($allowedExactType->equals($firstArm)) {
                 return true;
             }
         }
@@ -127,18 +125,23 @@ class ForbidIdenticalClassComparisonRule implements Rule
         // About isSuperTypeOf()
         // https://phpstan.org/developing-extensions/type-system#querying-a-specific-type
         foreach ($this->allowedTypes as $allowedType) {
-            if ($allowedType->isSuperTypeOf($type)->yes()) {
+            if ($allowedType->isSuperTypeOf($firstArm)->yes()) {
                 return true;
             }
         }
 
 
-        if ($type instanceof ArrayType) {
+        if ($firstArm instanceof ArrayType) {
             // Empty array
-            if ($type->isIterableAtLeastOnce()->no()) {
+            if ($firstArm->isIterableAtLeastOnce()->no()) {
                 return true;
             }
-            return $this->isAccepted($type->getIterableValueType());
+            return $this->isAccepted($firstArm->getIterableValueType(), $otherArm);
+        }
+
+        if ($firstArm instanceof EnumCaseObjectType && $otherArm->isSuperTypeOf($firstArm)->yes()) {
+            // The first arm is an enum case and the other arm is the enum class
+            return true;
         }
 
         return false;
