@@ -35,7 +35,6 @@
         "phpcsstandards/phpcsextra": "^1.0",
         "thecodingmachine/phpstan-strict-rules": "^1.0",
         "shipmonk/phpstan-rules": "^2.3",
-        "composer/composer": "^2.6.4",
         "moxio/php-codesniffer-sniffs": "^2.6"
     },
     "config": {
