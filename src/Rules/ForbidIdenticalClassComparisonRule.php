@@ -18,7 +18,6 @@ use PHPStan\Type\ArrayType;
 use PHPStan\Type\BooleanType;
 use PHPStan\Type\CallableType;
 use PHPStan\Type\Constant\ConstantBooleanType;
-use PHPStan\Type\Enum\EnumCaseObjectType;
 use PHPStan\Type\FloatType;
 use PHPStan\Type\IntegerType;
 use PHPStan\Type\MixedType;
@@ -139,8 +138,8 @@ class ForbidIdenticalClassComparisonRule implements Rule
             return $this->isAccepted($firstArm->getIterableValueType(), $otherArm);
         }
 
-        if ($firstArm instanceof EnumCaseObjectType && $otherArm->isSuperTypeOf($firstArm)->yes()) {
-            // The first arm is an enum case and the other arm is the enum class
+        if ($firstArm->isEnum()->yes() && $otherArm->isEnum()->yes()) {
+            // Both arms are enum
             return true;
         }
 

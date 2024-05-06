@@ -54,3 +54,5 @@ function enum(): FooBar
     return FooBar::BAR;
 }
 FooBar::FOO === enum();
+FooBar::FOO === FooBar::FOO;
+enum() === enum();
