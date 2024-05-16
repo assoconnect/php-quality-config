@@ -21,7 +21,7 @@ class EnforceHttpsLinksInPhpDocRuleTest extends RuleTestCase
     {
         $this->analyse([__DIR__ . '/EnforceHttpsLinksRule.file.php'], array_fill(
             0,
-            3,
+            5,
             [
                 EnforceHttpsLinksRule::MESSAGE,
                 16,
