@@ -14,7 +14,7 @@ class ForbidIdenticalClassComparisonRuleTest extends RuleTestCase
     public function getRule(): Rule
     {
         return new ForbidIdenticalClassComparisonRule(
-            $this->createReflectionProvider(),
+            self::createReflectionProvider(),
             [\DateTimeImmutable::class]
         );
     }
