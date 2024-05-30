@@ -138,9 +138,25 @@ class ForbidIdenticalClassComparisonRule implements Rule
             return $this->isAccepted($firstArm->getIterableValueType(), $otherArm);
         }
 
-        if ($firstArm->isEnum()->yes() && $otherArm->isEnum()->yes()) {
+        if ($this->typeIsEnumOrNull($firstArm) && $this->typeIsEnumOrNull($otherArm)) {
             // Both arms are enum
             return true;
+        }
+
+        return false;
+    }
+
+    private function typeIsEnumOrNull(Type $type): bool
+    {
+        if ($type->isEnum()->yes()) {
+            return true;
+        }
+
+        if ($type instanceof UnionType) {
+            [$firstType, $secondType] = $type->getTypes();
+            return ($firstType->isEnum()->yes() && $secondType->isNull()->yes())
+                || ($secondType->isEnum()->yes() && $firstType->isNull()->yes())
+            ;
         }
 
         return false;
