@@ -53,6 +53,14 @@ function enum(): FooBar
 {
     return FooBar::BAR;
 }
+function enumNullable(): ?FooBar
+{
+    return FooBar::BAR;
+}
+
+
 FooBar::FOO === enum();
+FooBar::FOO === enumNullable();
 FooBar::FOO === FooBar::FOO;
 enum() === enum();
+enum() === enumNullable();
