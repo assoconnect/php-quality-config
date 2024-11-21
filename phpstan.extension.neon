@@ -10,6 +10,7 @@ includes:
     - %currentWorkingDirectory%/vendor/thecodingmachine/phpstan-strict-rules/phpstan-strict-rules.neon
 
 rules:
+    - AssoConnect\PHPStanRules\Rules\DateTimeMustNotBeUsedRule
     - AssoConnect\PHPStanRules\Rules\EnforceHttpsLinksInPhpDocRule
     - AssoConnect\PHPStanRules\Rules\EnforceHttpsLinksInStringScalarRule
     #- AssoConnect\PHPStanRules\Rules\ForbidIdenticalClassComparisonRule (defined as a service)

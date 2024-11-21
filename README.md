@@ -14,6 +14,7 @@ composer require --dev assoconnect/php-quality-config
 ### Including in this package
 * `EnforceHttpsLinksRule` to ban insecure links containing `http:` in string scalars and PHPDoc blocks
 * `ForbidIdenticalClassComparisonRule` to ban strict comparison of objects
+* `DateTimeMustNotBeUsedRule` to ban the usage of `DateTime` and enforce the use of `DateTimeImmutable` for safer and more predictable date handling
 
 ### From other packages
 * `phpstan/phpstan-phpunit`
