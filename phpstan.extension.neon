@@ -8,6 +8,7 @@ includes:
     - %currentWorkingDirectory%/vendor/phpstan/phpstan-strict-rules/rules.neon
     - %currentWorkingDirectory%/vendor/roave/no-floaters/rules.neon
     - %currentWorkingDirectory%/vendor/thecodingmachine/phpstan-strict-rules/phpstan-strict-rules.neon
+	- %currentWorkingDirectory%/vendor/ergebnis/phpstan-rules/rules.neon
 
 rules:
     - AssoConnect\PHPStanRules\Rules\DateTimeMustNotBeUsedRule
