@@ -14,6 +14,7 @@ rules:
     - AssoConnect\PHPStanRules\Rules\EnforceHttpsLinksInPhpDocRule
     - AssoConnect\PHPStanRules\Rules\EnforceHttpsLinksInStringScalarRule
     #- AssoConnect\PHPStanRules\Rules\ForbidIdenticalClassComparisonRule (defined as a service)
+    - Ergebnis\PHPStan\Rules\Files\DeclareStrictTypesRule
 
 parametersSchema:
     forbidIdenticalClassComparison: structure([
