@@ -32,6 +32,7 @@
         "phpstan/phpstan-strict-rules": "^1.1",
         "phpstan/phpstan-webmozart-assert": "^1.2",
         "phpunit/phpunit": "^9.6.16",
+        "rector/rector": "^1.2",
         "roave/no-floaters": "^1.5",
         "shipmonk/phpstan-rules": "^3.2",
         "slevomat/coding-standard": "^8.6",

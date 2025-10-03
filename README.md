@@ -9,6 +9,15 @@
 composer require --dev assoconnect/php-quality-config
 ```
 
+In rector, you can use the ruleset:
+
+```php
+return RectorConfig::configure()
+    ->withSets([
+        __DIR__ . '/vendor/assoconnect/php-quality-config/src/Rector/rules.php',
+    ])
+```
+
 ## PHPStan
 
 ### Including in this package
