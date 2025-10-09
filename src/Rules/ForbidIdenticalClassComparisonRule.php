@@ -11,13 +11,11 @@ use PhpParser\Node\Expr\BinaryOp\Identical;
 use PhpParser\Node\Expr\BinaryOp\NotIdentical;
 use PHPStan\Analyser\Scope;
 use PHPStan\Reflection\ReflectionProvider;
+use PHPStan\Rules\IdentifierRuleError;
 use PHPStan\Rules\Rule;
-use PHPStan\Rules\RuleError;
 use PHPStan\Rules\RuleErrorBuilder;
-use PHPStan\Type\ArrayType;
 use PHPStan\Type\BooleanType;
 use PHPStan\Type\CallableType;
-use PHPStan\Type\Constant\ConstantBooleanType;
 use PHPStan\Type\FloatType;
 use PHPStan\Type\IntegerType;
 use PHPStan\Type\MixedType;
@@ -83,7 +81,7 @@ class ForbidIdenticalClassComparisonRule implements Rule
 
     /**
      * @param BinaryOp $node
-     * @return list<RuleError>
+     * @return list<IdentifierRuleError>
      */
     public function processNode(Node $node, Scope $scope): array
     {
@@ -92,7 +90,7 @@ class ForbidIdenticalClassComparisonRule implements Rule
         }
 
         $nodeType = $scope->getType($node);
-        if ($nodeType instanceof ConstantBooleanType) {
+        if ($nodeType->isTrue()->yes() || $nodeType->isFalse()->yes()) {
             return []; // always-true or always-false, already reported by native PHPStan (like $a === $a)
         }
 
@@ -109,7 +107,9 @@ class ForbidIdenticalClassComparisonRule implements Rule
                 $node->getOperatorSigil(),
                 $leftType->describe(VerbosityLevel::typeOnly()),
                 $rightType->describe(VerbosityLevel::typeOnly()),
-            ))->build(),
+            ))
+                ->identifier('assoconnect.identicalClassComparison')
+                ->build(),
         ];
     }
 
@@ -130,12 +130,14 @@ class ForbidIdenticalClassComparisonRule implements Rule
         }
 
 
-        if ($firstArm instanceof ArrayType) {
+        $arrays = $firstArm->getArrays();
+        if ([] !== $arrays) {
+            $firstArray = $arrays[0];
             // Empty array
-            if ($firstArm->isIterableAtLeastOnce()->no()) {
+            if ($firstArray->isIterableAtLeastOnce()->no()) {
                 return true;
             }
-            return $this->isAccepted($firstArm->getIterableValueType(), $otherArm);
+            return $this->isAccepted($firstArray->getIterableValueType(), $otherArm);
         }
 
         if ($this->typeIsEnumOrNull($firstArm) && $this->typeIsEnumOrNull($otherArm)) {
