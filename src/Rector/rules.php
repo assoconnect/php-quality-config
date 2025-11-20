@@ -6,7 +6,6 @@ use Rector\CodeQuality\Rector\LogicalAnd\LogicalToBooleanRector;
 use Rector\CodingStyle\Rector\ArrowFunction\StaticArrowFunctionRector;
 use Rector\CodingStyle\Rector\Closure\StaticClosureRector;
 use Rector\Config\RectorConfig;
-use Rector\Strict\Rector\BooleanNot\BooleanInBooleanNotRuleFixerRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictTypedCallRector;
 
 return static function (RectorConfig $rectorConfig): void {
@@ -16,8 +15,6 @@ return static function (RectorConfig $rectorConfig): void {
         StaticClosureRector::class,
         // Code Quality
         LogicalToBooleanRector::class,
-        // Strict
-        BooleanInBooleanNotRuleFixerRector::class,
         // Type Declaration
         ReturnTypeFromStrictTypedCallRector::class,
     ]);
