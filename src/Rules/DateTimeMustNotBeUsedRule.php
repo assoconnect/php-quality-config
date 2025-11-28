@@ -8,6 +8,7 @@ use PhpParser\Node;
 use PhpParser\Node\Expr\New_;
 use PhpParser\Node\Name\FullyQualified;
 use PHPStan\Analyser\Scope;
+use PHPStan\Rules\IdentifierRuleError;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
 
@@ -24,7 +25,10 @@ class DateTimeMustNotBeUsedRule implements Rule
         return New_::class;
     }
 
-    /** @param New_ $node */
+    /**
+     * @param New_ $node
+     * @return list<IdentifierRuleError>
+     */
     public function processNode(Node $node, Scope $scope): array
     {
         if (!$node->class instanceof FullyQualified) {
@@ -34,7 +38,11 @@ class DateTimeMustNotBeUsedRule implements Rule
         $classString = $node->class->toCodeString();
 
         if ('\DateTime' === $classString) {
-            return [RuleErrorBuilder::message(self::MESSAGE)->tip(self::TIP)->build()];
+            return [
+                RuleErrorBuilder::message(self::MESSAGE)->tip(self::TIP)
+                    ->identifier('assoconnect.dateTimeMustNotBeUsed')
+                    ->build(),
+            ];
         }
         return [];
     }
