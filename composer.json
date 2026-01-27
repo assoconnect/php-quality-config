@@ -23,7 +23,7 @@
     },
     "require": {
         "php": "^8.3",
-        "ekino/phpstan-banned-code": "^1.0",
+        "ekino/phpstan-banned-code": "^3.0",
         "ergebnis/phpstan-rules": "^2.5",
         "moxio/php-codesniffer-sniffs": "^2.6",
         "phpcsstandards/phpcsextra": "^1.0",
