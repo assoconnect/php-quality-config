@@ -24,23 +24,23 @@ class ForbidIdenticalClassComparisonRuleTest extends RuleTestCase
         $this->analyse([__DIR__ . '/ForbidIdenticalClassComparisonRule.file.php'], [
             [
                 'Using === with DateTime and DateTime is denied',
-                5,
+                9,
             ],
             [
                 'Using === with array<int, DateTime> and array<int, DateTime> is denied',
-                6,
+                10,
             ],
             [
                 'Using === with string|false and string|false is denied',
-                12,
+                16,
             ],
             [
                 'Using === with DateTime|string and DateTime|string is denied',
-                18,
+                22,
             ],
             [
                 'Using === with int|string and int|string is denied',
-                24,
+                28,
             ],
         ]);
     }
