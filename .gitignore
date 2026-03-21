@@ -1,5 +1,4 @@
 /vendor/*
-.phpunit.result.cache
 .phpunit.cache
 .idea
 .php_cs.cache
