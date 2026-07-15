@@ -31,7 +31,7 @@
         "phpstan/phpstan-phpunit": "^2.0",
         "phpstan/phpstan-strict-rules": "^2.0",
         "phpstan/phpstan-webmozart-assert": "^2.0",
-        "phpunit/phpunit": "^11",
+        "phpunit/phpunit": "^11 || ^12 || ^13",
         "rector/rector": "^2.2",
         "roave/no-floaters": "^1.13",
         "shipmonk/phpstan-rules": "^4.2",
